@@ -7,4 +7,5 @@ FROM docker.io/library/alpine:3.17.1
 RUN apk add --update-cache bash curl curl-doc mandoc
 COPY client.sh /root/
 COPY /pki/issued/client.crt /etc/ssl/certs
+COPY pki/private/client.key /etc/ssl/certs/
 CMD ["/bin/bash", "/root/client.sh"]
