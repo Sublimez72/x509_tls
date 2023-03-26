@@ -25,6 +25,8 @@ services:
       - "./server.conf:/etc/nginx/nginx.conf:ro"
       - "./pki/issued/server.crt:/usr/local/nginx/conf/server.crt"
       - "./pki/private/server.key:/usr/local/nginx/conf/server.key"
+      - "./pki/ca.crt:/usr/local/nginx/conf/ca.crt"
+
     healthcheck:
       test: "stat /input/secret.txt"
       interval: "3s"
