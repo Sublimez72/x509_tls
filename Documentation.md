@@ -24,6 +24,9 @@ Finally for the webserver I changed it so that it listens on port 443, I only al
 I added the links to all the certificates and created a custom logformat. I also added in the client verification and the crl.pem file.
 
 
+
+
+
 Curl without TLS handshake or certificates.
 ![NO_TLS](/pics/before.png)
 
