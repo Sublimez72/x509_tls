@@ -10,7 +10,7 @@ if [[ -z "${TARGET_SERVER_ADDRESS}" ]]; then
 	echo 'ERROR: Required environment variable "TARGET_SERVER_ADDRESS" is not configured'
 	exit 1
 else
-	TARGET_URL="http://${TARGET_SERVER_ADDRESS}:443/"
+	TARGET_URL="https://${TARGET_SERVER_ADDRESS}:443/"
 fi
 
 if [[ -z "${REQUEST_DELAY_SECONDS}" ]]; then
