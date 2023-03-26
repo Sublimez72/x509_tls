@@ -3,17 +3,17 @@ First thing I did was creating all the certificates and signing them with easy-r
 
 I ran the commands:
 
-easy-rsa pki-init
-easy-rsa build-ca nopass
-easy-rsa gen-req {servername} nopass
-I made sure that the DN of the server is the same as the one the client curls.
-easy-rsa gen-req {clientname} nopass
-easy-rsa sign-req server {servername} nopass
-easy-rsa sign-req client {clientname} nopass
-easy-rsa gen-crl nopass
+easy-rsa pki-init  <br />
+easy-rsa build-ca nopass  <br />
+easy-rsa gen-req {servername} nopass  <br />
+I made sure that the DN of the server is the same as the one the client curls.  <br />
+easy-rsa gen-req {clientname} nopass  <br />
+easy-rsa sign-req server {servername} nopass  <br />
+easy-rsa sign-req client {clientname} nopass  <br />
+easy-rsa gen-crl nopass  <br />
 
 
-After I did this I edited the files: docker-compose.yml and client.dockerfile
+After I did this I edited the files: docker-compose.yml and client.dockerfile 
 so that the certificates and all the necessary files were copied to each machine.
 
 Finally I edited the server.conf and client.sh file to implement ssl.
