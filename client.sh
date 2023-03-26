@@ -28,7 +28,7 @@ while true; do
 	# Perform request against HTTP server and print the response
 	curl \
 		--fail --silent --show-error --cert /etc/ssl/certs/client.crt --key /etc/ssl/certs/client.key\
-		--connect-timeout 3 --insecure \
+		--connect-timeout 3 \
 		"${TARGET_URL}"
 
 	# Display error message if curl executed unsuccessfully (exit code other than 0)
