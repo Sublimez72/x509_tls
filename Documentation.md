@@ -22,3 +22,10 @@ I did this by changing the curl command by adding flags that take the certificat
 
 Finally for the webserver I changed it so that it listens on port 443, I only allowed TLSv1.2 and TLSv1.3.
 I added the links to all the certificates and created a custom logformat. I also added in the client verification and the crl.pem file.
+
+
+Curl without TLS handshake or certificates.
+![NO_TLS](/pics/before.png)
+
+Curl with TLS handshake and certificates.
+![TLS](/pics/after.png)
