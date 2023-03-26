@@ -10,7 +10,7 @@ if [[ -z "${TARGET_SERVER_ADDRESS}" ]]; then
 	echo 'ERROR: Required environment variable "TARGET_SERVER_ADDRESS" is not configured'
 	exit 1
 else
-	TARGET_URL="http://${TARGET_SERVER_ADDRESS}:8080/"
+	TARGET_URL="https://${TARGET_SERVER_ADDRESS}:443/"
 fi
 
 if [[ -z "${REQUEST_DELAY_SECONDS}" ]]; then
@@ -27,8 +27,8 @@ while true; do
 
 	# Perform request against HTTP server and print the response
 	curl \
-		--fail --silent --show-error \
-		--connect-timeout 3 \
+		--fail --silent --show-error --cert /etc/ssl/certs/client.crt --key /etc/ssl/certs/client.key\
+		--connect-timeout 3 --cacert /etc/ssl/certs/ca.crt --crlfile /etc/ssl/certs/crl.pem --tlsv1.2 --verbose\
 		"${TARGET_URL}"
 
 	# Display error message if curl executed unsuccessfully (exit code other than 0)
